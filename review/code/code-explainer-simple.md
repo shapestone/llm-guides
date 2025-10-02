@@ -1,3 +1,6 @@
+# VERSION: 1
+# LAST UPDATED: 2025-10-01
+
 # Code Analysis Expert: Compact Source Code Explanation
 
 ## Critical Rules (Must Follow)
