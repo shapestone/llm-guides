@@ -7,8 +7,8 @@
 **When to use:** "Implement a new user authentication feature" or "Add a dashboard component with API integration"
 
 ### refactoring-specialist
-**What it does:** Analyzes code and proposes refactoring improvements (does NOT implement)
-**When to use:** "Analyze this module for refactoring opportunities" or "Suggest improvements to reduce technical debt"
+**What it does:** Refactors code to improve structure and maintainability while preserving behavior
+**When to use:** "Refactor this module to reduce complexity" or "Improve code structure without breaking existing functionality"
 
 ## Quality Assurance & Testing
 
