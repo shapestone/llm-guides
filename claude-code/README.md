@@ -28,25 +28,37 @@ claude-code/
 
 ## Installation
 
-### Quick Install
+### First-Time Setup
 
-**macOS/Linux:**
+**Step 1: Clone the repository**
 ```bash
-cd claude-code
-./install-agents.sh
+git clone https://github.com/shapestone/llm-guides.git
+cd llm-guides/claude-code
 ```
 
-**Windows:**
+**Step 2: Run the update script**
+
+macOS/Linux:
+```bash
+./update-agents.sh
+```
+
+Windows:
 ```cmd
-cd claude-code
-install-agents.bat
+update-agents.bat
 ```
 
 This will:
-1. Create `~/.claude/agents/` and `~/.claude/reference-documentation/` directories
-2. Copy all 14 agent files to `~/.claude/agents/`
-3. Copy all reference documentation to `~/.claude/reference-documentation/`
-4. Update reference paths in agent files to use absolute paths
+1. Pull latest changes from GitHub
+2. Create `~/.claude/agents/` and `~/.claude/reference-documentation/` directories
+3. Copy all 14 agent files to `~/.claude/agents/`
+4. Copy all reference documentation to `~/.claude/reference-documentation/`
+5. Update reference paths in agent files to use absolute paths
+
+**Step 3: Restart Claude Code**
+- Agents are discovered at startup
+- After restart, run `/agents` to see available agents
+- Agents are ready to use!
 
 ### Dry Run
 
@@ -62,11 +74,21 @@ To see what would be installed without making changes:
 install-agents.bat --dry-run
 ```
 
-### After Installation
+### Manual Installation (Alternative)
 
-1. **Restart Claude Code** - Agent discovery happens at startup
-2. Run `/agents` to see all available agents
-3. Use agents naturally in your conversations - Claude Code will suggest or invoke them automatically
+If you prefer to install without pulling from git:
+
+**macOS/Linux:**
+```bash
+cd claude-code
+./install-agents.sh
+```
+
+**Windows:**
+```cmd
+cd claude-code
+install-agents.bat
+```
 
 ## Available Agents (14 Total)
 
@@ -197,6 +219,17 @@ cd claude-code
 git pull origin main
 install-agents.bat
 ```
+
+### Getting Updates
+
+When agents are updated in the repository, team members can sync:
+
+```bash
+cd llm-guides/claude-code
+./update-agents.sh  # (or update-agents.bat on Windows)
+```
+
+Then restart Claude Code - agents are ready to use!
 
 ### For Teams
 
