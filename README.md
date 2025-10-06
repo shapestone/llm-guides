@@ -17,6 +17,20 @@ This repository contains professionally crafted prompt templates that help LLMs 
 
 ```
 llm-guides/
+├── claude-code/       # Claude Code custom agents (NEW!)
+│   ├── agents/                  # 14 specialized development agents
+│   │   ├── development/        # Full-stack and refactoring agents
+│   │   ├── quality/            # Testing and security agents
+│   │   ├── architecture/       # System design agents
+│   │   ├── data/               # Database agents
+│   │   ├── devops/             # CI/CD and infrastructure agents
+│   │   ├── product/            # Product management agents
+│   │   └── documentation/      # Documentation agents
+│   └── reference-documentation/ # Language-specific coding guides
+│       ├── golang/             # Go patterns and project layout
+│       ├── python/             # Python patterns
+│       ├── typescript/         # TypeScript/Vue patterns
+│       └── tailwind/           # Tailwind CSS patterns
 ├── code-gen/          # Code generation guides
 │   ├── code-writer.md           # Generic code writing guide
 │   ├── golang/                  # Go-specific guides
@@ -39,6 +53,42 @@ llm-guides/
 ```
 
 ## Available Guides
+
+### Claude Code Custom Agents (NEW!)
+
+**Quick Start:**
+
+macOS/Linux:
+```bash
+cd claude-code && ./update-agents.sh
+```
+
+Windows:
+```cmd
+cd claude-code && update-agents.bat
+```
+
+This pulls latest changes and installs all agents to `~/.claude/`
+
+This repository now includes 14 specialized agents for Claude Code, organized by role:
+
+| Category | Agents | Description |
+|----------|--------|-------------|
+| **Development** | full-stack-engineer, refactoring-specialist | Implement features and propose improvements |
+| **Quality** | code-reviewer, full-stack-test-engineer, e2e-test-engineer, security-engineer, performance-engineer | Testing, review, security, and performance |
+| **Architecture** | system-architect, design-systems-engineer | System design and UI component libraries |
+| **Data** | data-database-engineer | Database and data pipeline management |
+| **DevOps** | devops-engineer | CI/CD and infrastructure |
+| **Product** | technical-product-owner, project-manager | Requirements and project coordination |
+| **Documentation** | documentation-engineer | Technical documentation |
+
+See [claude-code/README.md](claude-code/README.md) for full details, installation instructions, and usage.
+
+**Features:**
+- Pre-configured agents with clear responsibilities and workflows
+- Technology-specific reference documentation (Go, TypeScript/Vue, Tailwind, Python)
+- Easy installation and team-wide synchronization
+- Source of truth for agent definitions
 
 ### Code Generation
 
