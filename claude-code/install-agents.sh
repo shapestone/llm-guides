@@ -76,11 +76,13 @@ echo ""
 # Copy reference documentation
 info "Installing reference documentation to $CLAUDE_HOME/reference-documentation/"
 
-# Copy main code-writer.md
-if [ -f "$SCRIPT_DIR/reference-documentation/code-writer.md" ]; then
-    run_or_print cp "$SCRIPT_DIR/reference-documentation/code-writer.md" "$CLAUDE_HOME/reference-documentation/"
-    log "Copied code-writer.md"
-fi
+# Copy root-level reference docs
+for doc in code-writer.md document-project-layout.md; do
+    if [ -f "$SCRIPT_DIR/reference-documentation/$doc" ]; then
+        run_or_print cp "$SCRIPT_DIR/reference-documentation/$doc" "$CLAUDE_HOME/reference-documentation/"
+        log "Copied $doc"
+    fi
+done
 
 # Copy language-specific docs
 for lang_dir in golang python typescript tailwind; do

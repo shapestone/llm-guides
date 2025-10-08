@@ -59,14 +59,16 @@ echo.
 REM Copy reference documentation
 echo [INFO] Installing reference documentation to %CLAUDE_HOME%\reference-documentation\
 
-REM Copy main code-writer.md
-if exist "%SCRIPT_DIR%reference-documentation\code-writer.md" (
-    if "%DRY_RUN%"=="true" (
-        echo   Would copy: code-writer.md
-    ) else (
-        copy /y "%SCRIPT_DIR%reference-documentation\code-writer.md" "%CLAUDE_HOME%\reference-documentation\" >nul
+REM Copy root-level reference docs
+for %%D in (code-writer.md document-project-layout.md) do (
+    if exist "%SCRIPT_DIR%reference-documentation\%%D" (
+        if "%DRY_RUN%"=="true" (
+            echo   Would copy: %%D
+        ) else (
+            copy /y "%SCRIPT_DIR%reference-documentation\%%D" "%CLAUDE_HOME%\reference-documentation\" >nul
+        )
+        echo [OK] Copied %%D
     )
-    echo [OK] Copied code-writer.md
 )
 
 REM Copy language-specific docs
