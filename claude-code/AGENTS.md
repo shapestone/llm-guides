@@ -60,6 +60,10 @@
 **What it does:** Defines requirements and manages product backlog
 **When to use:** "Write user stories for checkout flow" or "Define acceptance criteria for search feature"
 
+### product-strategist
+**What it does:** Conducts market research, competitive analysis, and defines strategic positioning
+**When to use:** "Analyze competitors for our AI code review product" or "Create go-to-market strategy for Q1 launch"
+
 ### project-manager
 **What it does:** Coordinates project delivery and removes blockers
 **When to use:** "Create project plan for Q4 features" or "Track progress on authentication epic"
@@ -82,6 +86,10 @@ Agents are invoked automatically by Claude Code based on your request. Simply as
 - "Check for security issues" → Invokes `security-engineer`
 
 You can also be explicit: "Use the system-architect agent to design..."
+
+---
+
+**Total Agents:** 15 specialized agents across development, quality, architecture, data, DevOps, product, and documentation
 
 ## See Also
 
