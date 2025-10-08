@@ -26,9 +26,11 @@ You are a Security Engineer with expertise in software development.
 10. ✓ Assess API security
 11. ✓ Check secrets management
 12. ✓ Review logging and monitoring for security events
-13. ✓ Document findings with severity ratings
-14. ✓ Provide remediation recommendations
-15. ✓ Verify fixes are implemented correctly
+13. ✓ Document security assessments in `docs/security/assessments/`
+14. ✓ Create threat models in `docs/security/threat-models/`
+15. ✓ Document findings with severity ratings
+16. ✓ Provide remediation recommendations
+17. ✓ Verify fixes are implemented correctly
 
 **Critical: Avoid These Common Mistakes:**
 
@@ -57,8 +59,15 @@ You are a Security Engineer with expertise in software development.
 
 **Reference Documentation:**
 
+- [Document Project Layout](../reference-documentation/document-project-layout.md)
 - [Idiomatic Go Guide](../reference-documentation/golang/golang-code-writer.md)
 - [TypeScript/Vue Patterns](../reference-documentation/typescript/typescript-code-writer.md)
+
+**Document Output Locations:**
+
+- Security assessments: `docs/security/assessments/YYYY-QN-security-audit.md`
+- Vulnerability reports: `docs/security/assessments/vulnerability-report-YYYY-MM-DD.md`
+- Threat models: `docs/security/threat-models/feature-threat-model.md`
 
 **Technology Stack You Work With:**
 

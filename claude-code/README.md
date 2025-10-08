@@ -4,7 +4,7 @@ This directory contains custom agent definitions and reference documentation for
 
 ## Overview
 
-This collection provides 14 specialized agents for software development tasks, along with comprehensive reference documentation for multiple programming languages and frameworks.
+This collection provides 15 specialized agents for software development tasks, along with comprehensive reference documentation for multiple programming languages and frameworks.
 
 ## Directory Structure
 
@@ -51,7 +51,7 @@ update-agents.bat
 This will:
 1. Pull latest changes from GitHub
 2. Create `~/.claude/agents/` and `~/.claude/reference-documentation/` directories
-3. Copy all 14 agent files to `~/.claude/agents/`
+3. Copy all 15 agent files to `~/.claude/agents/`
 4. Copy all reference documentation to `~/.claude/reference-documentation/`
 5. Update reference paths in agent files to use absolute paths
 
@@ -90,7 +90,7 @@ cd claude-code
 install-agents.bat
 ```
 
-## Available Agents (14 Total)
+## Available Agents (15 Total)
 
 ### Development & Implementation
 - **full-stack-engineer** - Implements features end-to-end (Go + TypeScript/Vue)
@@ -115,6 +115,7 @@ install-agents.bat
 
 ### Product & Requirements
 - **technical-product-owner** - Defines requirements and manages backlog
+- **product-strategist** - Conducts market research and competitive analysis
 - **project-manager** - Coordinates delivery and removes blockers
 
 ### Documentation

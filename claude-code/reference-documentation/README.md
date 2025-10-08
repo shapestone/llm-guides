@@ -10,7 +10,8 @@ These documents define idiomatic patterns, best practices, and project organizat
 
 ```
 reference-documentation/
-├── code-writer.md              # General code quality standards (language-agnostic)
+├── code-writer.md                   # General code quality standards (language-agnostic)
+├── document-project-layout.md       # Documentation organization standards
 ├── golang/
 │   ├── golang-code-writer.md        # Go idioms, patterns, and best practices
 │   └── golang-project-layout.md     # Go project structure and organization
@@ -28,6 +29,7 @@ reference-documentation/
 
 ### General Standards
 - **code-writer.md** - Core principles applicable to all languages: interface preservation, mockability, code quality, refactoring guidelines
+- **document-project-layout.md** - Standardized directory structure for documentation with clear separation between internal (stays in repo) and published (deployed to websites) documentation
 
 ### Language-Specific Guides
 
@@ -48,30 +50,69 @@ reference-documentation/
 
 ## How Agents Use These Documents
 
-### Full Stack Engineer
-References when implementing features:
+### Code-Writing Agents
+
+**Full Stack Engineer**
 - TypeScript + Vue patterns for frontend
 - Go patterns for backend
 - Tailwind for styling
 - General code quality standards
 
-### Code Reviewer
-Uses as checklist for reviews:
+**Code Reviewer**
 - Verify code follows language idioms
 - Check project structure compliance
 - Ensure best practices are followed
 
-### Refactoring Specialist
-References when proposing improvements:
+**Refactoring Specialist**
 - Identify violations of idiomatic patterns
 - Suggest structure improvements
 - Recommend better testing approaches
 
-### Full Stack Test Engineer
-References for testing standards:
+**Full Stack Test Engineer**
 - Language-specific testing patterns
 - Mockability requirements
 - Test organization standards
+
+### Documentation-Writing Agents
+
+**System Architect**
+- Document project layout for architecture decisions, diagrams, specifications
+- Output to `docs/architecture/` (internal)
+
+**Technical Product Owner**
+- Document project layout for requirements, roadmap
+- Output to `docs/product/requirements/`, `docs/product/roadmap/` (internal)
+
+**Product Strategist**
+- Document project layout for competitive analysis, market research, pricing strategy
+- Output to `docs/product/research/` (internal)
+
+**Project Manager**
+- Document project layout for planning and reports
+- Output to `docs/project/` (internal)
+
+**Security Engineer**
+- Document project layout for security assessments and threat models
+- Output to `docs/security/` (internal)
+
+**Performance Engineer**
+- Document project layout for benchmarks and optimization reports
+- Output to `docs/performance/` (internal)
+
+**Data/Database Engineer**
+- Document project layout for schema and migration documentation
+- Output to `docs/database/` (internal)
+
+**Design Systems Engineer**
+- Document project layout for component specs, tokens, patterns
+- Output to `design-system/` (published externally)
+
+**Documentation Engineer**
+- Document project layout for all documentation types
+- Creates `user-docs/` (published user documentation)
+- Creates `developer-docs/` (published API/SDK documentation)
+- Creates `docs/contributor/` (internal contributor guides)
+- Maintains consistency across all documentation directories
 
 ## Key Principles Across All Languages
 
