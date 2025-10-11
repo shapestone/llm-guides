@@ -1,10 +1,14 @@
-# Claude Code Custom Agents and Reference Documentation
+# Claude Code Custom Agents, Workflows, and Reference Documentation
 
-This directory contains custom agent definitions and reference documentation for use with Claude Code.
+This directory contains custom agent definitions, workflow commands, and reference documentation for use with Claude Code.
 
 ## Overview
 
-This collection provides 15 specialized agents for software development tasks, along with comprehensive reference documentation for multiple programming languages and frameworks.
+This collection provides:
+- **15 specialized agents** for software development tasks
+- **Workflow orchestration commands** for multi-agent feature implementation and code review
+- **Comprehensive reference documentation** for multiple programming languages and frameworks
+- **Workflow guides** explaining how to orchestrate agents for complex tasks
 
 ## Directory Structure
 
@@ -18,6 +22,12 @@ claude-code/
 │   ├── devops/               # Infrastructure roles
 │   ├── product/              # Product and project management
 │   └── documentation/        # Documentation roles
+├── commands/                  # Workflow slash commands
+│   ├── implement-feature.md  # Full feature implementation workflow
+│   └── full-review.md        # Comprehensive code review workflow
+├── workflows/                 # Workflow documentation
+│   ├── agent-orchestration-guide.md      # How to orchestrate agents
+│   └── feature-implementation-workflow.md # Detailed feature workflow
 ├── reference-documentation/  # Language-specific coding guides
 │   ├── golang/               # Go patterns and project layout
 │   ├── python/               # Python patterns
@@ -50,15 +60,18 @@ update-agents.bat
 
 This will:
 1. Pull latest changes from GitHub
-2. Create `~/.claude/agents/` and `~/.claude/reference-documentation/` directories
+2. Create `~/.claude/agents/`, `~/.claude/commands/`, and `~/.claude/reference-documentation/` directories
 3. Copy all 15 agent files to `~/.claude/agents/`
-4. Copy all reference documentation to `~/.claude/reference-documentation/`
-5. Update reference paths in agent files to use absolute paths
+4. Copy workflow commands to `~/.claude/commands/`
+5. Copy workflow documentation to `~/.claude/reference-documentation/workflows/`
+6. Copy all reference documentation to `~/.claude/reference-documentation/`
+7. Update reference paths in agent files to use absolute paths
 
 **Step 3: Restart Claude Code**
-- Agents are discovered at startup
+- Agents and commands are discovered at startup
 - After restart, run `/agents` to see available agents
-- Agents are ready to use!
+- Try `/implement-feature` or `/full-review` workflow commands
+- Read workflow guides in `~/.claude/reference-documentation/workflows/`
 
 ### Dry Run
 
@@ -180,6 +193,72 @@ I need help implementing a new feature for user authentication.
 
 Claude Code will automatically suggest or use the appropriate agent (e.g., `full-stack-engineer`).
 
+## Workflow Commands
+
+This collection includes pre-built workflow commands that orchestrate multiple agents for complex tasks.
+
+### Available Workflows
+
+#### `/implement-feature` - Full Feature Implementation
+
+Orchestrates a complete feature implementation workflow through multiple phases:
+
+1. **Analysis Phase** (parallel): system-architect, design-systems-engineer, data-database-engineer
+2. **Requirements**: technical-product-owner
+3. **Implementation Loop**: full-stack-test-engineer → full-stack-engineer (iterative)
+4. **E2E Testing**: e2e-test-engineer
+5. **Review Phase** (sequential): code-reviewer → performance-engineer → security-engineer
+6. **Verification**: e2e-test-engineer (final system check)
+7. **Documentation**: documentation-engineer + project-manager (parallel)
+
+**Usage:**
+```
+/implement-feature Add real-time notifications for user mentions
+```
+
+#### `/full-review` - Comprehensive Code Review
+
+Orchestrates a multi-perspective code review:
+
+1. **Code Quality Review**: code-reviewer
+2. **Security Analysis**: security-engineer
+3. **Performance Analysis**: performance-engineer
+4. **System Integration**: e2e-test-engineer
+5. **Final Recommendation**: Approve/Request Changes/Block
+
+**Usage:**
+```
+/full-review PR-123
+```
+
+### Workflow Documentation
+
+Detailed guides are available in `~/.claude/reference-documentation/workflows/`:
+
+- **agent-orchestration-guide.md**: Learn orchestration patterns (sequential, parallel, fan-out/fan-in, loops, pipelines)
+- **feature-implementation-workflow.md**: Step-by-step guide for feature implementation with detailed phase breakdowns
+
+### Manual Agent Orchestration
+
+You can also orchestrate agents manually with explicit instructions:
+
+```
+Please implement user authentication:
+1. First use system-architect to design the architecture
+2. Then use data-database-engineer to design the user schema
+3. Then use full-stack-engineer to implement
+4. Finally use code-reviewer to review
+```
+
+Or run agents in parallel:
+
+```
+Please review this PR in parallel:
+- Use security-engineer for security review
+- Use performance-engineer for performance analysis
+- Use code-reviewer for code quality
+```
+
 ## Updating Agents
 
 This repository is the **source of truth** for agent definitions.
@@ -241,10 +320,12 @@ Then restart Claude Code - agents are ready to use!
 ### Making Changes
 
 1. Edit agent files in `claude-code/agents/*/`
-2. Edit reference docs in `claude-code/reference-documentation/`
-3. Test locally: run `./install-agents.sh` (or `.bat`)
-4. Commit and push to GitHub
-5. Team runs `./update-agents.sh` (or `.bat`) to get changes
+2. Edit workflow commands in `claude-code/commands/`
+3. Edit workflow documentation in `claude-code/workflows/`
+4. Edit reference docs in `claude-code/reference-documentation/`
+5. Test locally: run `./install-agents.sh` (or `.bat`)
+6. Commit and push to GitHub
+7. Team runs `./update-agents.sh` (or `.bat`) to get changes
 
 ## Reference Path Updates
 
@@ -322,6 +403,8 @@ Always edit files in this repository, not in `~/.claude/` directly.
 ## Related Documentation
 
 - [Agent Directory README](agents/README.md) - Detailed agent specifications
+- [Agent Quick Reference](AGENTS.md) - Quick reference for all agents
+- [Workflow Guides](workflows/) - Agent orchestration patterns and workflows
 - [Reference Documentation README](reference-documentation/README.md) - Language guide details
 - Main repository [README](../README.md) - General LLM guides
 
