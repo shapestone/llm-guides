@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # update-agents.sh
-# Pulls latest changes from GitHub and installs/updates agents to ~/.claude/
+# Pulls latest changes from GitHub and installs/updates agents, commands, and workflows to ~/.claude/
 #
 # Usage:
 #   ./update-agents.sh           # Pull and install
@@ -30,8 +30,8 @@ info() {
     echo -e "${BLUE}ℹ${NC} $1"
 }
 
-echo "Updating Custom Agents and Reference Documentation"
-echo "===================================================="
+echo "Updating Custom Agents, Commands, Workflows, and Reference Documentation"
+echo "=========================================================================="
 echo ""
 
 # Step 1: Pull latest changes from GitHub
@@ -63,14 +63,15 @@ else
 fi
 
 # Step 2: Run installation script
-info "Installing agents and reference documentation..."
+info "Installing agents, commands, workflows, and reference documentation..."
 "$SCRIPT_DIR/install-agents.sh"
 
 echo ""
-echo "===================================================="
+echo "=========================================================================="
 echo -e "${GREEN}UPDATE COMPLETE${NC}"
 echo ""
 echo "Next steps:"
 echo "  1. Restart Claude Code (if running)"
 echo "  2. Run '/agents' to see available agents"
+echo "  3. Try '/implement-feature' or '/full-review' workflow commands"
 echo ""

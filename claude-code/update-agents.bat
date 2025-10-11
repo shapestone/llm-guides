@@ -1,6 +1,6 @@
 @echo off
 REM update-agents.bat
-REM Pulls latest changes from GitHub and installs/updates agents to %USERPROFILE%\.claude\
+REM Pulls latest changes from GitHub and installs/updates agents, commands, and workflows to %USERPROFILE%\.claude\
 REM
 REM Usage:
 REM   update-agents.bat           - Pull and install
@@ -13,8 +13,8 @@ set NO_PULL=false
 
 if "%1"=="--no-pull" set NO_PULL=true
 
-echo Updating Custom Agents and Reference Documentation
-echo ====================================================
+echo Updating Custom Agents, Commands, Workflows, and Reference Documentation
+echo ==========================================================================
 echo.
 
 REM Step 1: Pull latest changes from GitHub
@@ -52,16 +52,17 @@ if "%NO_PULL%"=="false" (
 )
 
 REM Step 2: Run installation script
-echo [INFO] Installing agents and reference documentation...
+echo [INFO] Installing agents, commands, workflows, and reference documentation...
 call "%SCRIPT_DIR%install-agents.bat"
 
 echo.
-echo ====================================================
+echo ==========================================================================
 echo [OK] UPDATE COMPLETE
 echo.
 echo Next steps:
 echo   1. Restart Claude Code (if running)
 echo   2. Run '/agents' to see available agents
+echo   3. Try '/implement-feature' or '/full-review' workflow commands
 echo.
 
 endlocal
