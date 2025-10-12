@@ -8,6 +8,11 @@ You are orchestrating the **Planning Phase** to review work, prioritize, and pla
 
 **IMPORTANT**: When creating feature roadmaps or multi-milestone plans, use the milestones.md template.
 
+**FIRST - Use project-manager agent and instruct them to:**
+1. Read the template file: `~/.claude/reference-documentation/projects/milestones.md`
+2. Follow the template structure exactly
+3. Output to: `docs/project/planning/feature-roadmap.md`
+
 - **Template Location**: `~/.claude/reference-documentation/projects/milestones.md`
 - **Output Location**: `docs/project/planning/feature-roadmap.md`
 

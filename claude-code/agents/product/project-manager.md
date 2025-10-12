@@ -48,6 +48,11 @@ When you need guidance on project documentation standards, ALWAYS check these lo
 
 **ALWAYS use the milestones.md template for feature roadmaps and multi-milestone planning.**
 
+**FIRST STEP: Read the template file using the Read tool:**
+```
+Read: ~/.claude/reference-documentation/projects/milestones.md
+```
+
 The milestones template is located at `~/.claude/reference-documentation/projects/milestones.md`
 
 **When to Use the Milestones Template:**
