@@ -4,6 +4,27 @@ description: Review remaining work, prioritize tasks, and identify next features
 
 You are orchestrating the **Planning Phase** to review work, prioritize, and plan next steps.
 
+## Preferred Output Format: Feature Roadmap (Milestones)
+
+**IMPORTANT**: When creating feature roadmaps or multi-milestone plans, use the milestones.md template.
+
+- **Template Location**: `~/.claude/reference-documentation/projects/milestones.md`
+- **Output Location**: `docs/project/planning/feature-roadmap.md`
+
+The milestones template provides:
+- Visual priority, complexity, business value, and customer impact indicators
+- Milestone-based organization with target dates
+- Priority matrix (Must-Have, Should-Have, Nice-to-Have, Future)
+- Quarterly resource allocation planning
+
+**Use the milestones template for:**
+- Multi-phase feature releases
+- Product roadmaps spanning multiple sprints/quarters
+- Stakeholder reporting
+- Feature prioritization across milestones
+
+---
+
 ## Planning Phase Objectives
 
 1. **Review Current Status**
@@ -233,7 +254,23 @@ Technical Debt/Maintenance:
 
 ## Planning Phase Output
 
-### Summary Document
+### Option 1: Feature Roadmap (Milestones) - PREFERRED
+
+For multi-milestone planning, use the milestones.md template:
+
+**Output to**: `docs/project/planning/feature-roadmap.md`
+
+1. Read the template: `~/.claude/reference-documentation/projects/milestones.md`
+2. Organize features by milestone with target dates
+3. Use visual indicators: 🔴 Priority | ⭐ Complexity | 💰 Business Value | 👤 Customer Impact
+4. Include Priority Matrix and Timeline Overview
+5. Add quarterly resource allocation
+
+### Option 2: Sprint Planning Summary (For Single Sprint)
+
+For immediate sprint planning, create a summary document:
+
+**Output to**: `docs/project/planning/sprint-[N]-plan.md`
 
 ```markdown
 # Planning Summary: [Date]

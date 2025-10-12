@@ -53,7 +53,7 @@ echo ""
 info "Creating directory structure..."
 run_or_print mkdir -p "$CLAUDE_HOME/agents"
 run_or_print mkdir -p "$CLAUDE_HOME/commands"
-run_or_print mkdir -p "$CLAUDE_HOME/reference-documentation"/{golang,python,typescript,tailwind,workflows}
+run_or_print mkdir -p "$CLAUDE_HOME/reference-documentation"/{golang,python,typescript,tailwind,workflows,projects}
 log "Directories created"
 echo ""
 
@@ -137,6 +137,15 @@ for lang_dir in golang python typescript tailwind; do
         fi
     fi
 done
+
+# Copy project templates and documentation
+if [ -d "$SCRIPT_DIR/reference-documentation/projects" ]; then
+    doc_count=$(ls -1 "$SCRIPT_DIR/reference-documentation/projects"/*.md 2>/dev/null | wc -l || echo 0)
+    if [ "$doc_count" -gt 0 ]; then
+        run_or_print cp "$SCRIPT_DIR/reference-documentation/projects"/*.md "$CLAUDE_HOME/reference-documentation/projects/"
+        log "Copied $doc_count project template(s)"
+    fi
+fi
 echo ""
 
 # Update reference paths in agent files

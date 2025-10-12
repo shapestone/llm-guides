@@ -32,6 +32,7 @@ if "%DRY_RUN%"=="true" (
     echo   Would create: %CLAUDE_HOME%\reference-documentation\typescript
     echo   Would create: %CLAUDE_HOME%\reference-documentation\tailwind
     echo   Would create: %CLAUDE_HOME%\reference-documentation\workflows
+    echo   Would create: %CLAUDE_HOME%\reference-documentation\projects
 ) else (
     if not exist "%CLAUDE_HOME%\agents" mkdir "%CLAUDE_HOME%\agents"
     if not exist "%CLAUDE_HOME%\commands" mkdir "%CLAUDE_HOME%\commands"
@@ -41,6 +42,7 @@ if "%DRY_RUN%"=="true" (
     if not exist "%CLAUDE_HOME%\reference-documentation\typescript" mkdir "%CLAUDE_HOME%\reference-documentation\typescript"
     if not exist "%CLAUDE_HOME%\reference-documentation\tailwind" mkdir "%CLAUDE_HOME%\reference-documentation\tailwind"
     if not exist "%CLAUDE_HOME%\reference-documentation\workflows" mkdir "%CLAUDE_HOME%\reference-documentation\workflows"
+    if not exist "%CLAUDE_HOME%\reference-documentation\projects" mkdir "%CLAUDE_HOME%\reference-documentation\projects"
 )
 echo [OK] Directories created
 echo.
@@ -125,6 +127,20 @@ for %%L in (golang python typescript tailwind) do (
         )
         if !DOC_COUNT! gtr 0 echo [OK] Copied !DOC_COUNT! file(s) for %%L
     )
+)
+
+REM Copy project templates and documentation
+if exist "%SCRIPT_DIR%reference-documentation\projects" (
+    set PROJECT_DOC_COUNT=0
+    for %%f in ("%SCRIPT_DIR%reference-documentation\projects\*.md") do (
+        if "%DRY_RUN%"=="true" (
+            echo   Would copy: %%~nxf to projects\
+        ) else (
+            copy /y "%%f" "%CLAUDE_HOME%\reference-documentation\projects\" >nul
+        )
+        set /a PROJECT_DOC_COUNT+=1
+    )
+    if !PROJECT_DOC_COUNT! gtr 0 echo [OK] Copied !PROJECT_DOC_COUNT! project template(s)
 )
 echo.
 
