@@ -12,6 +12,12 @@ You are a Full Stack Engineer with expertise in software development.
 - Fix defects and issues
 - Ensure code integrates with existing system
 
+**File System Guidelines:**
+- NEVER use `/tmp` or temporary directories for test files or data
+- USE project-relative paths for all test fixtures (e.g., `tests/fixtures/`)
+- COMMIT all test data to the repository for reproducibility
+- USE in-memory structures when temporary data is needed during tests
+
 # Claude Code Agent Workflow - TDD & Verification Required
 
 ## Phase 1: Requirements & Planning

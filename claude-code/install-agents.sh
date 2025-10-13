@@ -1,10 +1,10 @@
 #!/bin/bash
 #
 # install-agents.sh
-# Installs/updates custom agents and reference documentation to ~/.claude/
+# Installs/updates custom agents, commands, workflows, and reference documentation to ~/.claude/
 #
 # Usage:
-#   ./install-agents.sh           # Install/update all agents and docs
+#   ./install-agents.sh           # Install/update all agents, commands, and docs
 #   ./install-agents.sh --dry-run # Show what would be installed without doing it
 
 set -e
@@ -45,14 +45,15 @@ run_or_print() {
     fi
 }
 
-echo "Installing Custom Agents and Reference Documentation"
-echo "===================================================="
+echo "Installing Custom Agents, Commands, Workflows, and Reference Documentation"
+echo "=========================================================================="
 echo ""
 
 # Create directories
 info "Creating directory structure..."
 run_or_print mkdir -p "$CLAUDE_HOME/agents"
-run_or_print mkdir -p "$CLAUDE_HOME/reference-documentation"/{golang,python,typescript,tailwind}
+run_or_print mkdir -p "$CLAUDE_HOME/commands"
+run_or_print mkdir -p "$CLAUDE_HOME/reference-documentation"/{golang,python,typescript,tailwind,workflows,projects}
 log "Directories created"
 echo ""
 
@@ -71,6 +72,48 @@ for agent_file in "$SCRIPT_DIR/agents"/*/*.md; do
     fi
 done
 log "Installed $AGENT_COUNT agent files"
+echo ""
+
+# Copy commands
+info "Installing commands to $CLAUDE_HOME/commands/"
+COMMAND_COUNT=0
+if [ -d "$SCRIPT_DIR/commands" ]; then
+    for command_file in "$SCRIPT_DIR/commands"/*.md; do
+        if [ -f "$command_file" ]; then
+            command_name=$(basename "$command_file")
+            if [ "$DRY_RUN" = true ]; then
+                echo "  Would copy: $command_name"
+            else
+                cp "$command_file" "$CLAUDE_HOME/commands/"
+            fi
+            ((COMMAND_COUNT++))
+        fi
+    done
+    log "Installed $COMMAND_COUNT command file(s)"
+else
+    warn "No commands directory found, skipping"
+fi
+echo ""
+
+# Copy workflows
+info "Installing workflow documentation to $CLAUDE_HOME/reference-documentation/workflows/"
+WORKFLOW_COUNT=0
+if [ -d "$SCRIPT_DIR/workflows" ]; then
+    for workflow_file in "$SCRIPT_DIR/workflows"/*.md; do
+        if [ -f "$workflow_file" ]; then
+            workflow_name=$(basename "$workflow_file")
+            if [ "$DRY_RUN" = true ]; then
+                echo "  Would copy: $workflow_name"
+            else
+                cp "$workflow_file" "$CLAUDE_HOME/reference-documentation/workflows/"
+            fi
+            ((WORKFLOW_COUNT++))
+        fi
+    done
+    log "Installed $WORKFLOW_COUNT workflow document(s)"
+else
+    warn "No workflows directory found, skipping"
+fi
 echo ""
 
 # Copy reference documentation
@@ -94,6 +137,15 @@ for lang_dir in golang python typescript tailwind; do
         fi
     fi
 done
+
+# Copy project templates and documentation
+if [ -d "$SCRIPT_DIR/reference-documentation/projects" ]; then
+    doc_count=$(ls -1 "$SCRIPT_DIR/reference-documentation/projects"/*.md 2>/dev/null | wc -l || echo 0)
+    if [ "$doc_count" -gt 0 ]; then
+        run_or_print cp "$SCRIPT_DIR/reference-documentation/projects"/*.md "$CLAUDE_HOME/reference-documentation/projects/"
+        log "Copied $doc_count project template(s)"
+    fi
+fi
 echo ""
 
 # Update reference paths in agent files
@@ -113,7 +165,7 @@ fi
 echo ""
 
 # Summary
-echo "===================================================="
+echo "=========================================================================="
 if [ "$DRY_RUN" = true ]; then
     echo -e "${YELLOW}DRY RUN COMPLETE${NC}"
     echo "No files were modified. Run without --dry-run to install."
@@ -121,12 +173,15 @@ else
     echo -e "${GREEN}INSTALLATION COMPLETE${NC}"
     echo ""
     echo "Installed to:"
-    echo "  • Agents: $CLAUDE_HOME/agents/"
+    echo "  • Agents: $CLAUDE_HOME/agents/ ($AGENT_COUNT files)"
+    echo "  • Commands: $CLAUDE_HOME/commands/ ($COMMAND_COUNT files)"
+    echo "  • Workflows: $CLAUDE_HOME/reference-documentation/workflows/ ($WORKFLOW_COUNT files)"
     echo "  • Reference Docs: $CLAUDE_HOME/reference-documentation/"
     echo ""
     echo "Next steps:"
     echo "  1. Restart Claude Code (if running)"
     echo "  2. Run '/agents' to see available agents"
-    echo "  3. Use agents with the Task tool"
+    echo "  3. Try '/implement-feature' or '/full-review' commands"
+    echo "  4. Read workflow guides in ~/.claude/reference-documentation/workflows/"
 fi
 echo ""

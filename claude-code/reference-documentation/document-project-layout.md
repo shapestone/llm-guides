@@ -18,38 +18,38 @@ This guide defines a standardized directory structure for documentation, with cl
 ```
 project/
 ├── docs/                          # Internal documentation (never published)
-│   ├── architecture/             # System architecture & design
-│   │   ├── decisions/           # Architecture Decision Records (ADRs)
-│   │   ├── diagrams/            # System diagrams
-│   │   └── specifications/      # Technical design specs
-│   ├── product/                  # Product requirements & planning
-│   │   ├── requirements/        # User stories, acceptance criteria
-│   │   ├── roadmap/             # Product roadmap
-│   │   └── research/            # Market/competitive research
-│   ├── security/                 # Security documentation
-│   │   ├── assessments/         # Security audits
-│   │   └── threat-models/       # Threat modeling
-│   ├── performance/              # Performance analysis
-│   │   ├── benchmarks/          # Performance test results
-│   │   └── optimization/        # Optimization reports
-│   ├── database/                 # Database design
-│   │   ├── schema/              # Schema docs, ERDs
-│   │   └── migrations/          # Migration planning
-│   ├── project/                  # Project management
-│   │   ├── planning/            # Project plans
-│   │   └── reports/             # Status reports, retros
-│   ├── operations/               # Operational procedures
-│   │   ├── runbooks/            # Incident response
-│   │   ├── deployment/          # Deployment procedures
-│   │   └── monitoring/          # Monitoring setup
-│   └── contributor/              # For code contributors
+│   ├── architecture/              # System architecture & design
+│   │   ├── decisions/             # Architecture Decision Records (ADRs)
+│   │   ├── diagrams/              # System diagrams
+│   │   └── specifications/        # Technical design specs
+│   ├── product/                   # Product requirements & planning
+│   │   ├── requirements/          # User stories, acceptance criteria
+│   │   ├── roadmap/               # Product roadmap
+│   │   └── research/              # Market/competitive research
+│   ├── security/                  # Security documentation
+│   │   ├── assessments/           # Security audits
+│   │   └── threat-models/         # Threat modeling
+│   ├── performance/               # Performance analysis
+│   │   ├── benchmarks/            # Performance test results
+│   │   └── optimization/          # Optimization reports
+│   ├── database/                  # Database design
+│   │   ├── schema/                # Schema docs, ERDs
+│   │   └── migrations/            # Migration planning
+│   ├── project/                   # Project management
+│   │   ├── planning/              # Project plans
+│   │   └── reports/               # Status reports, retros
+│   ├── operations/                # Operational procedures
+│   │   ├── runbooks/              # Incident response
+│   │   ├── deployment/            # Deployment procedures
+│   │   └── monitoring/            # Monitoring setup
+│   └── contributor/               # For code contributors
 │       ├── local-setup.md
 │       ├── contributing.md
 │       ├── testing-guide.md
 │       └── debugging.md
 │
 ├── user-docs/                     # Published end-user documentation
-│   ├── index.md                  # Homepage
+│   ├── index.md                   # Homepage
 │   ├── getting-started.md
 │   ├── tutorials/
 │   │   ├── your-first-project.md
@@ -62,35 +62,35 @@ project/
 │   └── troubleshooting.md
 │
 ├── developer-docs/                # Published developer documentation
-│   ├── index.md                  # Developer portal homepage
-│   ├── getting-started.md        # Quick start for API users
+│   ├── index.md                   # Developer portal homepage
+│   ├── getting-started.md         # Quick start for API users
 │   ├── api/
-│   │   ├── reference/           # API reference docs
-│   │   │   ├── openapi.yaml    # OpenAPI spec
-│   │   │   └── endpoints/      # Endpoint documentation
-│   │   └── guides/              # API usage guides
+│   │   ├── reference/             # API reference docs
+│   │   │   ├── openapi.yaml       # OpenAPI spec
+│   │   │   └── endpoints/         # Endpoint documentation
+│   │   └── guides/                # API usage guides
 │   │       ├── authentication.md
 │   │       ├── pagination.md
 │   │       ├── rate-limiting.md
 │   │       └── webhooks.md
-│   ├── sdk/                      # SDK documentation (if applicable)
+│   ├── sdk/                       # SDK documentation (if applicable)
 │   │   ├── javascript.md
 │   │   ├── python.md
 │   │   └── go.md
-│   └── changelog.md              # API changelog
+│   └── changelog.md               # API changelog
 │
 └── design-system/                 # Published design system docs
-    ├── index.md                  # Design system homepage
+    ├── index.md                   # Design system homepage
     ├── getting-started.md
-    ├── components/               # Component documentation
+    ├── components/                # Component documentation
     │   ├── button.md
     │   ├── modal.md
     │   └── form-inputs.md
-    ├── tokens/                   # Design tokens
+    ├── tokens/                    # Design tokens
     │   ├── colors.md
     │   ├── typography.md
     │   └── spacing.md
-    └── patterns/                 # Design patterns
+    └── patterns/                  # Design patterns
         ├── layouts.md
         ├── navigation.md
         └── accessibility.md

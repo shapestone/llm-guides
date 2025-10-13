@@ -41,7 +41,7 @@ agents/
 ## Agent Roles (14 Total)
 
 ### Development & Implementation
-- **Full Stack Engineer** - Implements features end-to-end (Go + TypeScript/Vue)
+- **Full Stack Engineer** - Implements features end-to-end
 - **Refactoring Specialist** - Analyzes code and proposes improvements
 
 ### Quality Assurance & Testing
@@ -87,7 +87,7 @@ When working with Claude Code:
 
 ## Technology Stack
 
-These agents are configured for:
+These agents are configured for, but not limited to, the following technologies:
 - **Backend**: Go
 - **Frontend**: TypeScript, Vue.js, Tailwind CSS
 - **Database**: PostgreSQL/MySQL
