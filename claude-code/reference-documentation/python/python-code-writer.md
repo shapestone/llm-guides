@@ -125,7 +125,9 @@
 - ABSTRACT file operations behind simple function interfaces (not necessarily formal protocols)
 - USE Python's built-in capabilities: `json.load()`, `csv.reader()`, etc.
 - DESIGN file operations to work with file-like objects for flexibility
-- CONSIDER using `tempfile` module for testing file operations
+- USE in-memory file-like objects (`io.StringIO`, `io.BytesIO`) for testing when possible
+- USE project-relative test fixture directories (e.g., `tests/fixtures/`) for test data that gets committed to the repository
+- AVOID temporary directories or ephemeral test data - tests should be permanent and reproducible
 
 ### Configuration Management
 - USE environment variables for deployment-specific settings
