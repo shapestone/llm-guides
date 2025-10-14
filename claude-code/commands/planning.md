@@ -1,5 +1,5 @@
 ---
-description: Review remaining work, prioritize tasks, and identify next features to implement
+description: [create report, modify milestones, reprioritize work, or identify next features to implement]
 ---
 
 You are orchestrating the **Planning Phase** to review work, prioritize, and plan next steps.

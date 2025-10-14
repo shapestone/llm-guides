@@ -1,6 +1,6 @@
 ---
 argument-hint: [feature description]
-description: Phase 1 - Architectural discovery with analysis of architecture, UI, and database impact
+description: [feature or architectural change]
 ---
 
 You are orchestrating **Phase 1: Discovery** for: $ARGUMENTS

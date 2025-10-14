@@ -1,6 +1,6 @@
 ---
 argument-hint: [feature description]
-description: Phase 4 - Git operations: commit changes and push to GitHub with unique feature branch
+description: [feature]
 ---
 
 You are orchestrating **Phase 4: Push** for: $ARGUMENTS

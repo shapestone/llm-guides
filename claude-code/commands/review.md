@@ -1,6 +1,6 @@
 ---
 argument-hint: [feature description or PR number]
-description: Phase 3 - Comprehensive review: E2E tests, performance analysis, security review, and system verification
+description: [feature or project]
 ---
 
 You are orchestrating **Phase 3: Review** for: $ARGUMENTS
