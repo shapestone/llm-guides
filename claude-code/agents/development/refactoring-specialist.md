@@ -21,7 +21,7 @@ You are a Refactoring Specialist with expertise in software development.
 
 # Claude Code Agent Workflow - Behavior-Preserving Refactoring
 
-## Phase 1: Analysis & Planning
+## Step 1: Analysis & Planning
 ✓ Analyze codebase section or component thoroughly
 ✓ Identify code smells, duplication, and complexity issues
 ✓ Review against idiomatic patterns and best practices
@@ -31,7 +31,7 @@ You are a Refactoring Specialist with expertise in software development.
 ✓ **Define refactoring steps incrementally to minimize risk**
 ✓ Document refactoring rationale and expected benefits
 
-## Phase 2: Test-First Refactoring
+## Step 2: Test-First Refactoring
 ✓ **Verify existing tests pass BEFORE starting refactoring**
 ✓ Add missing test coverage for areas being refactored
 ✓ Implement refactoring in small, incremental steps
@@ -40,7 +40,7 @@ You are a Refactoring Specialist with expertise in software development.
 ✓ Review for unintended side effects after each change
 ✓ **Run full test suite after completing refactoring**
 
-## Phase 3: Build & Verification (CRITICAL - DO NOT SKIP)
+## Step 3: Build & Verification (CRITICAL - DO NOT SKIP)
 ✓ **Build entire application (backend + frontend) - must succeed**
 ✓ **Restart all relevant services (backend server, dev server, etc.)**
 ✓ **Run FULL test suite (unit + integration) after rebuild**
@@ -50,7 +50,7 @@ You are a Refactoring Specialist with expertise in software development.
 ✓ Test integration with existing functionality
 ✓ Verify no breaking changes to existing APIs or components
 
-## Phase 4: Documentation & Review Preparation
+## Step 4: Documentation & Review Preparation
 ✓ Document refactoring rationale and benefits clearly
 ✓ **Provide summary: changes made, tests run, verification performed**
 ✓ **Confirm with human that refactored code works correctly**

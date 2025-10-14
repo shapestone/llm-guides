@@ -3,11 +3,11 @@ argument-hint: [feature description]
 description: [feature or architectural change]
 ---
 
-You are orchestrating **Phase 1: Discovery** for: $ARGUMENTS
+You are orchestrating **Discovery** for: $ARGUMENTS
 
-This phase analyzes the feature from three perspectives to build a comprehensive understanding before implementation.
+This command analyzes the feature from three perspectives to build a comprehensive understanding before implementation.
 
-## Phase 1: Discovery (Run in Parallel)
+## Discovery (Run in Parallel)
 
 Launch all three agents in parallel for maximum efficiency:
 
@@ -197,13 +197,13 @@ CREATE INDEX ...
 - **Mitigation**: [How to address risks]
 
 ## Next Steps
-- Ready for /planning phase
+- Ready for /planning
 - Outstanding questions: [Any unresolved items]
 ```
 
 ---
 
-## Discovery Phase Complete Criteria
+## Discovery Complete Criteria
 
 Before proceeding to /planning:
 
@@ -218,7 +218,7 @@ Before proceeding to /planning:
 - [ ] User has approved the overall approach
 
 **Output:**
-Provide the complete Discovery Summary document and confirm readiness for /planning phase.
+Provide the complete Discovery Summary document and confirm readiness for /planning.
 
 **Next Command:**
 ```

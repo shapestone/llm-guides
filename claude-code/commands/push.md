@@ -1,13 +1,13 @@
 ---
 argument-hint: [feature description]
-description: [feature]
+description: [feature or project]
 ---
 
-You are orchestrating **Phase 4: Push** for: $ARGUMENTS
+You are handling Git operations for: $ARGUMENTS
 
-This phase handles all Git operations including creating a unique feature branch, committing changes, and pushing to GitHub.
+This command handles creating a unique feature branch, committing changes, and pushing to GitHub.
 
-## Phase 4: Git Operations
+## Git Operations
 
 **Use git-ops-engineer** to perform all Git operations.
 
@@ -36,7 +36,6 @@ git status | grep -E '\.env|credentials|secrets|\.key|\.pem'
 - [ ] Application builds successfully
 - [ ] No sensitive files in changes
 - [ ] Code has been reviewed
-- [ ] Phase 3 review completed with ship approval
 
 ---
 
@@ -246,13 +245,6 @@ Implemented real-time notification system for user mentions.
 - ✓ Performance verified
 - ✓ Security reviewed
 
-## Phase Completed
-- ✓ Phase 1: Discovery
-- ✓ Phase 2: Implementation
-- ✓ Phase 3: Review
-- ✓ Phase 4: Push
-- ⏳ Phase 5: Release (pending)
-
 Ready for final review and merge.
 EOF
 )"
@@ -312,7 +304,7 @@ git push -u origin new-name
 
 ---
 
-## Phase 4 Complete Criteria
+## Push Complete Criteria
 
 - [ ] Unique feature branch created
 - [ ] All changes reviewed and staged
@@ -325,7 +317,7 @@ git push -u origin new-name
 **Output:**
 
 ```markdown
-## Phase 4: Push Complete
+## Push Complete
 
 ### Branch Information
 - **Branch Name**: feature/add-user-notifications-1704153600
@@ -344,14 +336,8 @@ git push -u origin new-name
 - **PR URL**: https://github.com/username/repo/pull/123
 
 ### Next Steps
-Ready for Phase 5: Release
 - Documentation updates
 - Project tracking
-- Optional: Tag creation
-- Optional: Merge to main
-```
-
-**Next Command:**
-```
-/release [feature description]
+- Optional: Tag creation and release
+- Optional: Create pull request or merge
 ```

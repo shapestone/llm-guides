@@ -3,11 +3,11 @@ argument-hint: [feature description or PR number]
 description: [feature or project]
 ---
 
-You are orchestrating **Phase 3: Review** for: $ARGUMENTS
+You are performing comprehensive review for: $ARGUMENTS
 
-This phase performs comprehensive verification including E2E testing, performance analysis, security review, and final system integrity check.
+This command performs comprehensive verification including E2E testing, performance analysis, security review, and final system integrity check.
 
-## Phase 3: Review
+## Review
 
 ---
 
@@ -300,7 +300,7 @@ npm run test:integration
 
 ---
 
-## Phase 3 Review Summary
+## Review Summary
 
 ### Ship/No-Ship Recommendation
 
@@ -321,25 +321,25 @@ npm run test:integration
 - No critical security issues
 - No regressions
 - System integrity verified
-- **Proceed to Phase 4: /push**
+- **Proceed to: /push**
 
 **⚠️ SHIP WITH CONDITIONS** - Minor Issues
 - E2E tests passing but minor issues found
 - Performance acceptable with minor optimizations needed
 - No critical security issues but minor improvements recommended
 - Create tickets for follow-up work
-- **Can proceed to Phase 4: /push** (address issues in next iteration)
+- **Can proceed to: /push** (address issues in next iteration)
 
 **❌ DO NOT SHIP** - Critical Issues
 - E2E test failures
 - Unacceptable performance
 - Critical security vulnerabilities
 - Regressions in existing functionality
-- **Return to Phase 2: /implement** to address issues
+- **Return to: /implement** to address issues
 
 ---
 
-## Phase 3 Complete Criteria
+## Review Complete Criteria
 
 - [ ] All E2E tests written and passing
 - [ ] Performance analyzed and acceptable
