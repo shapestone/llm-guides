@@ -1,6 +1,6 @@
 ---
 argument-hint: [optional: number of commits or feature description]
-description: Generate Slack message for team updates
+description: Generate Slack team update message
 ---
 
 You are generating a **Slack Team Update** about recent changes.
@@ -69,22 +69,22 @@ Create a friendly, concise message formatted for Slack:
 
 Hey team! Here's what we shipped recently:
 
-*New Features:*
+*New Features*:
 • [Feature 1] - [Brief description of benefit]
 • [Feature 2] - [Brief description of benefit]
 
-*Bug Fixes:*
+*Bug Fixes*:
 • Fixed [issue description]
 • Resolved [problem description]
 
-*Improvements:*
+*Improvements*:
 • [Enhancement 1] - [Why it matters]
 • [Enhancement 2] - [Why it matters]
 
-*Technical Updates:*
+*Technical Updates*:
 • [Technical change and benefit]
 
-*What's Next:*
+*What's Next*:
 [Optional: Brief mention of upcoming work]
 
 Branch: `[branch-name]`
@@ -94,7 +94,8 @@ Questions or feedback? Let me know! :point_left:
 ```
 
 **Slack Formatting Guidelines:**
-- Use `*bold*` for emphasis
+- Use `*bold*:` for section headers (colon OUTSIDE asterisks)
+- Use `*bold*` for inline emphasis (colon inside if part of text)
 - Use `•` for bullet points
 - Use `:emoji:` for visual interest (e.g., :rocket:, :bug:, :sparkles:, :wrench:)
 - Use `` `code` `` for branch names, file names, commands
@@ -151,17 +152,17 @@ For recent commits about documentation improvements:
 
 Hey team! Just wrapped up some documentation improvements:
 
-*What's New:*
+*What's New*:
 • Cleaned up all slash command descriptions - now more clear and consistent
 • Removed confusing "Phase" terminology from agent workflows
 • Updated command references to use simpler language
 
-*Why It Matters:*
+*Why It Matters*:
 • Easier for everyone to understand the workflow commands
 • Less confusion about what each command does
 • Better onboarding for new team members
 
-*Technical:*
+*Technical*:
 • Updated 7 command files (discovery, implement, review, push, release, document, planning)
 • Updated 2 agent files (full-stack-engineer, refactoring-specialist)
 
