@@ -7,6 +7,12 @@ You are generating a **Slack Team Update** about recent changes.
 
 This command analyzes recent git commits and creates a friendly, team-oriented message formatted for Slack.
 
+**Usage:**
+- `/slack` - Generate update from last commit (default)
+- `/slack 5` - Generate update from last 5 commits
+- `/slack 10` - Generate update from last 10 commits
+- `/slack "feature description"` - Generate update focused on a specific feature
+
 ## Generate Slack Update
 
 ### Step 1: Analyze Recent Changes
@@ -14,8 +20,8 @@ This command analyzes recent git commits and creates a friendly, team-oriented m
 **Gather information:**
 
 ```bash
-# Get recent commits (default: last 5, or use $ARGUMENTS if number provided)
-COMMIT_COUNT="${1:-5}"
+# Get recent commits (default: last 1, or use $ARGUMENTS if number provided)
+COMMIT_COUNT="${1:-1}"
 git log -n "$COMMIT_COUNT" --pretty=format:"%h - %s (%an, %ar)" --no-merges
 
 # Get detailed changes
@@ -114,17 +120,23 @@ Questions or feedback? Let me know! :point_left:
 
 ### Step 4: Customize for Context
 
+**If no arguments** (default - last 1 commit):
+- Focus on the most recent change
+- Keep it concise and specific
+- Highlight the key benefit or fix
+- Perfect for quick updates after a single commit
+
+**If number provided** (e.g., `/slack 5`):
+- Give overview of all recent changes
+- Group related commits together
+- Highlight most impactful changes
+- Keep other changes brief
+
 **If feature-specific** (when $ARGUMENTS describes a feature):
 - Focus on that specific feature
 - Include more details about functionality
 - Mention testing/quality assurance done
 - Call out any breaking changes or migration needed
-
-**If general update** (when $ARGUMENTS is number or empty):
-- Give overview of all recent changes
-- Group related commits together
-- Highlight most impactful changes
-- Keep other changes brief
 
 ---
 
@@ -145,7 +157,27 @@ Provide the Slack message in a code block so it's easy to copy/paste:
 
 ## Example Output
 
-For recent commits about documentation improvements:
+**Example 1: Single commit (default - `/slack`):**
+
+```
+:sparkles: *Quick Update*
+
+Hey team! Just pushed a fix:
+
+*What Changed*:
+• Fixed authentication timeout issue on mobile devices
+
+*Why It Matters*:
+• Users will no longer be logged out unexpectedly
+• Better mobile experience
+
+Branch: `fix/mobile-auth-timeout`
+Commit: abc1234
+
+Ready for testing on staging! :rocket:
+```
+
+**Example 2: Multiple commits (`/slack 5`):**
 
 ```
 :books: *Documentation Update*
@@ -167,7 +199,7 @@ Hey team! Just wrapped up some documentation improvements:
 • Updated 2 agent files (full-stack-engineer, refactoring-specialist)
 
 Branch: `feature/cleanup-phase-references`
-Commits: 12 commits
+Commits: 5 commits
 
 These changes are ready to sync - run the update scripts to get the latest! :raised_hands:
 ```
