@@ -1,13 +1,13 @@
 ---
 argument-hint: [feature description]
-description: Phase 2 - Implementation loop with TDD: write tests, implement feature, review code
+description: Implementation loop with TDD: write tests, implement feature, review code
 ---
 
-You are orchestrating **Phase 2: Implementation Loop** for: $ARGUMENTS
+You are orchestrating the **Implementation Loop** for: $ARGUMENTS
 
-This phase follows Test-Driven Development (TDD) and iterates until the feature is complete and code-reviewed.
+This command follows Test-Driven Development (TDD) and iterates until the feature is complete and code-reviewed.
 
-## Phase 2: Implementation Loop
+## Implementation Loop
 
 **Iterate until feature is complete and passes code review:**
 
@@ -76,10 +76,10 @@ func TestNotificationFlow_Integration(t *testing.T) {
 ```
 
 #### Plan E2E Test Scenarios
-Document E2E tests to be written later in Phase 3:
+Document E2E tests to be written later during review:
 
 ```markdown
-E2E Test Scenarios (to implement in Phase 3):
+E2E Test Scenarios (to implement during /review):
 1. User mentions another user → Notification created → Appears in UI
 2. User clicks notification → Marks as read → Badge count decreases
 3. User configures preferences → Notifications respect settings
@@ -88,7 +88,7 @@ E2E Test Scenarios (to implement in Phase 3):
 **Test Coverage Goals:**
 - Unit test coverage: >80%
 - Integration test coverage: Key workflows
-- E2E test scenarios: Documented for Phase 3
+- E2E test scenarios: Documented for /review
 
 ---
 
@@ -234,7 +234,7 @@ Common issues:
 - Code meets all standards
 - Tests are comprehensive
 - Feature is complete
-- **Proceed to Phase 3: /review**
+- **Proceed to: /review**
 
 **Option B: Changes Requested ⚠️**
 - Specific issues identified
@@ -284,13 +284,12 @@ Common issues:
                    │      Step 2       Step 1
                    │
                    ↓
-            Ready for Phase 3
-            /review
+            Ready for /review
 ```
 
 ---
 
-## Phase 2 Complete Criteria
+## Implementation Complete Criteria
 
 Before proceeding to /review:
 
@@ -335,7 +334,7 @@ Provide implementation summary:
 - Feature tested in running application: ✓
 - Functionality matches requirements: ✓
 
-**Status**: Ready for Phase 3: /review
+**Status**: Ready for /review
 ```
 
 **Next Command:**

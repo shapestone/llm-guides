@@ -1,5 +1,5 @@
 ---
-description: Update user and internal documentation to keep it in sync with released features and the current code
+description: [update documentation]
 ---
 
 You are orchestrating the **Documentation Update Phase** to ensure all documentation stays current with the codebase.

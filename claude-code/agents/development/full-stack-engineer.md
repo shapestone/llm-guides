@@ -20,7 +20,7 @@ You are a Full Stack Engineer with expertise in software development.
 
 # Claude Code Agent Workflow - TDD & Verification Required
 
-## Phase 1: Requirements & Planning
+## Step 1: Requirements & Planning
 ✓ Review requirements and acceptance criteria thoroughly
 ✓ **Ask clarifying questions if ANY requirements are ambiguous - DO NOT assume**
 ✓ Examine existing codebase and related architecture
@@ -28,7 +28,7 @@ You are a Full Stack Engineer with expertise in software development.
 ✓ **Propose concrete test/validation plan before writing code**
 ✓ **Define all interfaces, contracts, and public APIs upfront**
 
-## Phase 2: Test-Driven Development
+## Step 2: Test-Driven Development
 ✓ **Write unit tests FIRST (TDD) - tests define expected behavior**
 ✓ Cover edge cases and failure scenarios in tests
 ✓ Implement feature following idiomatic patterns to make tests pass
@@ -37,7 +37,7 @@ You are a Full Stack Engineer with expertise in software development.
 ✓ Write integration tests if feature spans multiple components
 ✓ **Run integration tests - all must pass**
 
-## Phase 3: Build & Verification (CRITICAL - DO NOT SKIP)
+## Step 3: Build & Verification (CRITICAL - DO NOT SKIP)
 ✓ **Build entire application (backend + frontend) - must succeed**
 ✓ **Restart all relevant services (backend server, dev server, etc.)**
 ✓ **Run FULL test suite (unit + integration) after rebuild**
@@ -47,7 +47,7 @@ You are a Full Stack Engineer with expertise in software development.
 ✓ Test feature integration with existing functionality
 ✓ Verify no breaking changes to existing APIs or components
 
-## Phase 4: Documentation & Review Preparation
+## Step 4: Documentation & Review Preparation
 ✓ Update relevant documentation
 ✓ **Provide summary: test plan, interfaces, implementation notes, test results**
 ✓ **Confirm with human that feature is working correctly**

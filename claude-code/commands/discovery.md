@@ -1,20 +1,36 @@
 ---
 argument-hint: [feature description]
-description: Phase 1 - Architectural discovery with analysis of architecture, UI, and database impact
+description: [feature or architectural change]
 ---
 
-You are orchestrating **Phase 1: Discovery** for: $ARGUMENTS
+You are orchestrating **Discovery** for: $ARGUMENTS
 
-This phase analyzes the feature from three perspectives to build a comprehensive understanding before implementation.
+This command uses a sequential approach to understand requirements, then analyze architecture, UI, and data needs.
 
-## Phase 1: Discovery (Run in Parallel)
+## Discovery - Sequential Process
 
-Launch all three agents in parallel for maximum efficiency:
+**CRITICAL: Run these steps IN ORDER. Do NOT run agents in parallel.**
 
-### 1. System Architect - Architectural Analysis
+---
 
-**Use system-architect** to:
-- Use interactive questionnaire-style discovery
+## Step 1: System Architect - Requirements Gathering & Architecture
+
+**FIRST**, use **system-architect** to understand what the user wants:
+
+### Requirements Phase (Interactive Q&A):
+
+**The system-architect will:**
+1. Ask clarifying questions ONE AT A TIME with multiple choice options (A, B, C, D)
+2. Understand the problem scope and requirements
+3. Identify constraints and success criteria
+4. Wait for your response before proceeding to next question
+5. Continue until the problem is fully understood
+
+**Do NOT let system-architect analyze code or make decisions until requirements are clear.**
+
+### Architecture Phase (After Requirements Understood):
+
+**Then, system-architect will:**
 - Analyze current codebase architecture
 - Identify architectural decision points
 - Present options (A/B/C/D) with tradeoffs for EACH decision
@@ -47,9 +63,11 @@ Decision Point 2: API Design
 ... continue for all decision points
 ```
 
-### 2. Design Systems Engineer - UI/Component Analysis
+---
 
-**Use design-systems-engineer** to:
+## Step 2: Design Systems Engineer - UI/Component Analysis (OPTIONAL)
+
+**ONLY AFTER system-architect completes**, if UI components are needed, use **design-systems-engineer** to:
 - Analyze UI requirements for "$ARGUMENTS"
 - Identify components needed (new vs reusable)
 - Check design system consistency
@@ -66,9 +84,11 @@ Decision Point 2: API Design
 - Accessibility checklist
 - Responsive breakpoint considerations
 
-### 3. Data/Database Engineer - Data Analysis
+---
 
-**Use data-database-engineer** to:
+## Step 3: Data/Database Engineer - Data Analysis (OPTIONAL)
+
+**ONLY AFTER system-architect completes**, if database changes are needed, use **data-database-engineer** to:
 - Analyze data requirements for "$ARGUMENTS"
 - Design database schema changes
 - Plan data migrations
@@ -87,23 +107,23 @@ Decision Point 2: API Design
 
 ---
 
-## After All Three Agents Complete
+## After All Agents Complete
 
 ### Synthesis Phase
 
-**Consolidate findings from all three perspectives:**
+**Consolidate findings from all agents that were run:**
 
-1. **Architectural Foundation**
+1. **Architectural Foundation** (from system-architect)
    - Summary of key architectural decisions
    - Technology stack selected
    - Integration approach
 
-2. **UI/UX Requirements**
+2. **UI/UX Requirements** (if design-systems-engineer was run)
    - Components to build
    - Design patterns to follow
    - User experience flows
 
-3. **Data Strategy**
+3. **Data Strategy** (if data-database-engineer was run)
    - Schema changes summary
    - Performance considerations
    - Data integrity approach
@@ -197,28 +217,31 @@ CREATE INDEX ...
 - **Mitigation**: [How to address risks]
 
 ## Next Steps
-- Ready for /planning phase
+- Ready for /planning
 - Outstanding questions: [Any unresolved items]
 ```
 
 ---
 
-## Discovery Phase Complete Criteria
+## Discovery Complete Criteria
 
 Before proceeding to /planning:
 
+- [ ] System architect has completed requirements gathering
 - [ ] All architectural decisions made and documented
-- [ ] UI components identified and specified
-- [ ] Database schema designed
+- [ ] UI components identified and specified (if applicable)
+- [ ] Database schema designed (if applicable)
 - [ ] Integration points defined
 - [ ] Security considerations addressed
 - [ ] Performance implications understood
-- [ ] All three agents' findings synthesized
+- [ ] All agent findings synthesized
 - [ ] No major conflicts between perspectives
 - [ ] User has approved the overall approach
 
+**Note:** UI and data analysis are optional based on the feature requirements.
+
 **Output:**
-Provide the complete Discovery Summary document and confirm readiness for /planning phase.
+Provide the complete Discovery Summary document and confirm readiness for /planning.
 
 **Next Command:**
 ```

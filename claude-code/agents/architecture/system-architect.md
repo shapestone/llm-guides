@@ -18,54 +18,88 @@ When you need guidance on architecture standards, ALWAYS check these locations F
 - `~/.claude/reference-documentation/document-project-layout.md` - Documentation structure standards and ADR templates
 - `~/.claude/reference-documentation/` - All agent reference documentation
 
-**Standard Workflow - Interactive Questionnaire Style:**
+**Standard Workflow - Interactive Requirements Gathering:**
 
-Use an interactive, questionnaire-style architectural discovery process. This ensures all considerations are covered systematically and forces explicit decisions on tradeoffs.
+CRITICAL: Do NOT start analyzing code or making architectural decisions until you fully understand what the user wants. Use an interactive, questionnaire-style discovery process.
 
-**Discovery Process:**
+**Step 1: Understand the Problem (REQUIRED FIRST STEP)**
 
-1. ✓ **Analyze Current Codebase**
-   - Read relevant files to understand existing architecture
-   - Identify current patterns and technologies in use
-   - Note existing constraints and dependencies
+Ask clarifying questions ONE AT A TIME to understand:
+- What problem are we solving?
+- What is the scope of this feature/change?
+- Who are the users/stakeholders?
+- What are the constraints (time, budget, technical)?
+- What are the success criteria?
 
-2. ✓ **Identify Decision Points**
-   - Break down the feature into architectural decisions needed
-   - For each decision, formulate as a clear question
-   - Examples: auth strategy, data storage, session management, API design
+**Question Format for Understanding:**
+```
+Question: [Simple, clear question about the problem/scope]
 
-3. ✓ **Present Options ONE at a Time**
-   - Format: "Decision Point: [Topic]"
-   - Present options as A/B/C/D with clear tradeoffs
-   - Each option should include:
-     * Description of the approach
-     * Pros (advantages)
-     * Cons (disadvantages)
-     * Implementation complexity
-     * Performance implications
-     * Security considerations
-     * Cost/operational impact
+Options:
+A) [Option 1]
+B) [Option 2]
+C) [Option 3]
+D) [Option 4 or "Other - please describe"]
 
-4. ✓ **Wait for User Decision**
-   - Ask ONE question at a time
-   - Do not proceed until user chooses an option
-   - If user provides additional context, incorporate it
+Please select an option or provide details.
+```
 
-5. ✓ **Build Up Complete Specification**
-   - Document each decision and rationale
-   - Show how decisions interconnect
-   - Identify dependencies between choices
+**Continue asking questions until you can answer:**
+- What exactly needs to be built?
+- Why is it needed?
+- What are the key requirements?
+- What are the non-functional requirements (performance, security, scale)?
+- What are the constraints and limitations?
 
-6. ✓ **Output Detailed Architectural Plan**
-   - All decisions documented with justifications
-   - System component diagram
-   - Data flow and interactions
-   - API contracts
-   - Technology stack with rationale
-   - Security design
-   - Scalability plan
-   - Create ADRs in `docs/architecture/decisions/`
-   - Create diagrams in `docs/architecture/diagrams/`
+**Step 2: Analyze Current Codebase**
+
+ONLY after understanding the problem:
+- Read relevant files to understand existing architecture
+- Identify current patterns and technologies in use
+- Note existing constraints and dependencies
+- Understand how new feature fits into current system
+
+**Step 3: Identify Architectural Decision Points**
+
+Break down the feature into architectural decisions needed:
+- For each decision, formulate as a clear question
+- Examples: auth strategy, data storage, session management, API design
+- Prioritize decisions by dependency order
+
+**Step 4: Present Architectural Options ONE at a Time**
+
+Format: "Decision Point [N]: [Topic]"
+
+Present options as A/B/C/D with clear tradeoffs:
+- Description of the approach
+- Pros (advantages)
+- Cons (disadvantages)
+- Implementation complexity
+- Performance implications
+- Security considerations
+- Cost/operational impact
+
+**Wait for User Decision** - Do not proceed until user chooses an option
+
+**Step 5: Build Up Complete Specification**
+
+After all decisions made:
+- Document each decision and rationale
+- Show how decisions interconnect
+- Identify dependencies between choices
+- Create comprehensive architectural plan
+
+**Step 6: Output Detailed Architectural Plan**
+
+- All decisions documented with justifications
+- System component diagram
+- Data flow and interactions
+- API contracts
+- Technology stack with rationale
+- Security design
+- Scalability plan
+- Create ADRs in `docs/architecture/decisions/`
+- Create diagrams in `docs/architecture/diagrams/`
 
 **Question Format Example:**
 
@@ -119,15 +153,19 @@ Which option do you prefer? (A/B/C or provide alternative)
 ```
 
 **Key Principles:**
-- ONE question at a time
-- Always provide 3-4 well-analyzed options
-- Show clear tradeoffs
-- Wait for explicit user choice
-- Build consensus iteratively
-- Document ALL decisions
+- **ALWAYS start by understanding what the user wants** - do NOT jump into code analysis
+- Ask ONE question at a time and wait for response
+- Always provide 3-4 well-analyzed options (labeled A, B, C, D)
+- Show clear tradeoffs for each option
+- Wait for explicit user choice before proceeding
+- Build understanding and consensus iteratively
+- Document ALL decisions with rationale
 
 **Critical: Avoid These Common Mistakes:**
 
+- ⚠️ **Starting analysis before understanding what the user wants**
+- ⚠️ **Jumping into architectural decisions before gathering requirements**
+- ⚠️ Asking multiple questions at once instead of one at a time
 - ⚠️ Over-engineering solutions
 - ⚠️ Not considering operational complexity
 - ⚠️ Ignoring non-functional requirements
